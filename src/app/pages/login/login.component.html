@@ -1,0 +1,38 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <h1 class="text-center py-2">Login</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" formControlName="usuario" class="form-control" />
+        <label
+          class="text-danger fw-bold"
+          *ngIf="
+            getControl('usuario')?.touched && getControl('usuario')?.errors
+          "
+          >El usuario es requerido</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Clave</label>
+        <input type="password" formControlName="clave" class="form-control" />
+        <label
+          class="text-danger fw-bold"
+          *ngIf="getControl('clave')?.touched && getControl('clave')?.errors"
+          >La clave es requerida</label
+        >
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary w-100 mt-4" [disabled]="formGroup.invalid">
+    Iniciar Sesión
+  </button>
+  <p class="my-3 text-center">
+    ¿No tienes cuenta?
+    <a routerLink="/registro"> Registrate aqui</a>
+  </p>
+</form>

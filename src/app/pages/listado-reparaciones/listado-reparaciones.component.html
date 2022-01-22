@@ -1,0 +1,22 @@
+<h2>Listado Reparaciones</h2>
+<hr />
+<table class="table table-bordered">
+  <thead>
+    <tr class="bg-primary text-white text-center">
+      <th>Cliente</th>
+      <th>Celular</th>
+      <th>Descripcion</th>
+      <th>Valor</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reparacion of reparaciones">
+      <td>{{ reparacion.telefono.cliente.nombre }}</td>
+      <td>{{ reparacion.telefono.marca }}</td>
+      <td>{{ reparacion.descripcion }}</td>
+      <td>{{ reparacion.valor | currency }}</td>
+      <td>{{ reparacion.fecha | date }}</td>
+    </tr>
+  </tbody>
+</table>

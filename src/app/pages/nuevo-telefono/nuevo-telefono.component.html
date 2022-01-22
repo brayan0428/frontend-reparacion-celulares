@@ -1,0 +1,33 @@
+<h2>Nuevo Telefono</h2>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Marca</label>
+        <input type="text" formControlName="marca" class="form-control" />
+        <label
+          class="text-danger fw-bold"
+          *ngIf="getControl('marca')?.touched && getControl('marca')?.errors"
+          >La marca es requerida</label
+        >
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Año</label>
+        <input type="number" formControlName="ano" class="form-control" />
+        <label
+          class="text-danger fw-bold"
+          *ngIf="getControl('ano')?.touched && getControl('ano')?.errors"
+          >El año es requerido</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary mx-3" [disabled]="formGroup.invalid">
+      Crear Telefono
+    </button>
+    <a routerLink="/dashboard/clientes" class="btn btn-danger">Cancelar</a>
+  </div>
+</form>

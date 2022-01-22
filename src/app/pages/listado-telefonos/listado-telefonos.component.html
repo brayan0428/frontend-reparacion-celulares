@@ -1,0 +1,25 @@
+<h2>Listado de Telefonos</h2>
+<h3 *ngIf="telefonos.length > 0">Cliente: {{ telefonos[0].cliente.nombre }}</h3>
+<hr />
+<p *ngIf="telefonos.length == 0">El cliente no tiene telefonos registrados</p>
+<table class="table table-bordered" *ngIf="telefonos.length > 0">
+  <thead>
+    <tr class="text-center bg-primary text-white">
+      <td>Marca</td>
+      <td>Año</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let telefono of telefonos" class="text-center">
+      <td>{{ telefono.marca }}</td>
+      <td>{{ telefono.ano }}</td>
+      <td>
+        <a routerLink="/dashboard/reparaciones/nuevo/{{ telefono.id }}"
+          >Ingresar Reparación</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" routerLink="/dashboard/clientes">Volver</a>
