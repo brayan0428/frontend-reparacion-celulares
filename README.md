@@ -6,7 +6,7 @@ Para la construcción de esta aplicación se utilizo Angular en su versión 13. 
 
 ### Ejecución de la app
 
-Para ejecutar la aplicación en modo desarrollo, se debe configurar la url de la api en el archivo _proxy.conf.json_. Una vez se tenga configurada la url, se debe ejecutar el comando _npm start_.
+Para ejecutar la aplicación en modo desarrollo primero se debe hacer la instalación de los paquetes por medio del comando _npm install_, Una vez hecho esto se debe configurar la url de la api en el archivo _proxy.conf.json_. Una vez se tenga configurada la url, se debe ejecutar el comando _npm start_.
 
 ### Funcionamiento de la Aplicación
 
